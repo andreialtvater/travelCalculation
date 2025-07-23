@@ -1,0 +1,260 @@
+/* ===== Reset básico e base ===== */
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background: #f9fafc;
+    color: #333;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ===== Container principal ===== */
+.container {
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    width: 90%;
+    max-width: 400px;
+    box-sizing: border-box;
+}
+
+/* ===== Título ===== */
+h1 {
+    font-size: 1.6em;
+    margin-bottom: 25px;
+    text-align: center;
+    font-weight: 600;
+    color: #333;
+}
+
+/* ===== Formulário ===== */
+form label {
+    display: block;
+    margin-bottom: 20px;
+    color: #555;
+    font-weight: 500;
+}
+
+/* Inputs texto e número */
+input[type="number"],
+input[type="text"],
+select {
+    width: 100%;
+    padding: 12px 14px;
+    margin-top: 5px;
+    border: 1.5px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 1.1em;
+    color: #333;
+    background: #fff;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+input[type="number"]:focus,
+input[type="text"]:focus,
+select:focus {
+    outline: none;
+    border-color: #007BFF;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+    background: #fafaff;
+}
+
+/* ===== Botões ===== */
+button[type="submit"],
+.btn-limpar {
+    font-size: 1.1em;
+    padding: 14px 0;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    color: white;
+    width: 100%;
+    user-select: none;
+}
+
+button[type="submit"] {
+    background-color: #007BFF;
+}
+
+button[type="submit"]:hover,
+button[type="submit"]:focus {
+    background-color: #004080;
+    outline: none;
+}
+
+.btn-limpar {
+    background-color: #6c757d;
+    margin-top: 10px;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+}
+
+.btn-limpar:hover,
+.btn-limpar:focus {
+    background-color: #5a6268;
+    outline: none;
+}
+
+/* ===== Botões lado a lado ===== */
+.botoes {
+    display: flex;
+    gap: 12px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.botoes button[type="submit"],
+.botoes .btn-limpar {
+    flex: 1 1 100%; /* 100% largura em telas pequenas */
+    margin-top: 0 !important;
+    padding: 14px 0;
+    border-radius: 6px;
+    font-weight: 600;
+    text-align: center;
+}
+
+@media(min-width: 480px) {
+    .botoes button[type="submit"],
+    .botoes .btn-limpar {
+        flex: 1;
+        width: auto !important;
+    }
+}
+
+/* ===== Resultados e erros ===== */
+.resultado,
+.erro {
+    margin-top: 20px;
+    padding: 15px 18px;
+    border-radius: 6px;
+    font-size: 0.95em;
+    line-height: 1.4;
+    border: 1px solid transparent;
+}
+
+/* Resultado positivo */
+.resultado {
+    background-color: #e9f7ef;
+    color: #2e7d32;
+    border-color: #c8e6c9;
+}
+
+/* Mensagem de erro */
+.erro {
+    background-color: #fdecea;
+    color: #c62828;
+    border-color: #f5c6cb;
+}
+
+/* ===== Linha horizontal ===== */
+hr {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 10px 0;
+}
+
+/* ===== Dark Mode ===== */
+body.dark-mode {
+    background: #121212;
+    color: #ddd;
+}
+
+body.dark-mode .container {
+    background: #1e1e1e;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.8);
+}
+
+body.dark-mode h1,
+body.dark-mode form label {
+    color: #eee;
+}
+
+body.dark-mode input[type="number"],
+body.dark-mode input[type="text"],
+body.dark-mode select {
+    background: #2b2b2b;
+    border: 1.5px solid #555;
+    color: #ddd;
+}
+
+body.dark-mode input[type="number"]:focus,
+body.dark-mode input[type="text"]:focus,
+body.dark-mode select:focus {
+    border-color: #66aaff;
+    box-shadow: 0 0 8px rgba(102,170,255,0.7);
+    background: #3a3a3a;
+}
+
+body.dark-mode .botoes button[type="submit"] {
+    background-color: #3399ff;
+}
+
+body.dark-mode .botoes button[type="submit"]:hover,
+body.dark-mode .botoes button[type="submit"]:focus {
+    background-color: #1a73e8;
+}
+
+body.dark-mode .botoes .btn-limpar {
+    background-color: #555;
+}
+
+body.dark-mode .botoes .btn-limpar:hover,
+body.dark-mode .botoes .btn-limpar:focus {
+    background-color: #444;
+}
+
+body.dark-mode .resultado {
+    background-color: #223322;
+    border-color: #446644;
+    color: #aaddaa;
+}
+
+body.dark-mode .erro {
+    background-color: #5a1e1e;
+    border-color: #b55252;
+    color: #f77;
+}
+
+body.dark-mode hr {
+    border-top-color: #555;
+}
+
+/* ===== Botão alternar modo escuro fixo no canto superior direito ===== */
+#btnToggleDark {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    width: 36px;
+    height: 36px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    outline: none;
+    transition: transform 0.3s ease;
+    z-index: 1000;
+}
+
+#btnToggleDark:hover {
+    transform: scale(1.2);
+}
+
+#btnToggleDark.sun {
+    background-image: url('data:image/svg+xml;utf8,<svg fill="orange" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/></svg>');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 20px 20px;
+}
+
+#btnToggleDark.moon {
+    background-image: url('data:image/svg+xml;utf8,<svg fill="yellow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 20px 20px;
+}
